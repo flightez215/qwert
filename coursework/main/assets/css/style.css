@@ -1,0 +1,832 @@
+/* Общие настройки страницы */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+/* Контейнер формы */
+.auth-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.auth-container h2 {
+    text-align: center;
+    color: #1c1e21;
+    margin-bottom: 25px;
+}
+
+/* Поля ввода */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Глазик для пароля */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+    user-select: none;
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6600;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #166fe5;
+}
+
+/* Ошибки и уведомления */
+.error-msg {
+    background: #ffebe8;
+    border: 1px solid #dd3c10;
+    color: #d03910;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.success-msg {
+    background: #e7f3ff;
+    border: 1px solid #ff6600;
+    color: #ff6600;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 450px;
+    text-align: left;
+}
+
+.profile-header {
+    border-bottom: 2px solid #f0f2f5;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.info-row {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.label { color: #65676b; font-weight: bold; width: 100px; display: inline-block; }
+.value { color: #1c1e21; }
+        
+.btn-container { display: flex; gap: 10px; margin-top: 25px; }
+.btn-shop { background: #28a745; text-decoration: none; display: block; text-align: center; line-height: 40px; height: 40px; flex: 1; border-radius: 6px; color: white; font-weight: bold;}
+.btn-shop:hover { background: #218838; }
+.btn-logout { background: #dc3545; flex: 1; }
+.btn-logout:hover { background: #c82333; }
+        
+.role-tag {
+            background: #e7f3ff;
+            color: #ff6600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+}
+
+/* Стили для админ-панели */
+.admin-body {
+    display: block; /* Сбрасываем flex от центровки форм */
+    padding: 40px 20px;
+    background: #f4f7f6;
+}
+
+.admin-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.admin-table th {
+    background: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+}
+
+.admin-table tr:hover {
+    background: #fafafa;
+}
+
+.btn-delete {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-delete:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.admin-form-box {
+    background: #fdfdfd;
+    border: 1px solid #eef0f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.admin-form-box h3 {
+    margin-top: 0;
+    color: #444;
+}
+
+.admin-form-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+/* Стили для страницы профиля */
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background: #e7f3ff;
+    color: #ff6600;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin: 0 auto 20px;
+    font-weight: bold;
+}
+
+.user-info {
+    margin-bottom: 25px;
+    text-align: left;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.info-item b {
+    color: #1c1e21;
+    display: inline-block;
+    width: 70px;
+}
+
+.admin-link {
+    display: block;
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.admin-link:hover {
+    background: #ffb300;
+}
+
+.logout-link {
+    display: block;
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+/* --- Стили главной страницы (ООО Кверт) --- */
+.main-layout {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Сайдбар с категориями */
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 10px;
+}
+
+.cat-link {
+    text-decoration: none;
+    color: #444;
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.cat-link:hover {
+    background: #f0f2f5;
+    color: #ff6600;
+}
+
+.cat-link.active {
+    background: #ff6600;
+    color: white;
+    font-weight: bold;
+}
+
+/* Сетка товаров */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-icon {
+    font-size: 50px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.category-badge {
+    background: #e7f3ff;
+    color: #ff6600;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-card h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #1c1e21;
+}
+
+.product-desc {
+    font-size: 13px;
+    color: #65676b;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    height: 36px;
+    overflow: hidden;
+}
+
+.product-price {
+    font-size: 22px;
+    color: #1c1e21;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background: #ff6600;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-buy:hover {
+    background: #166fe5;
+}
+/* --- Стили корзины ООО Кверт --- */
+.cart-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-table th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #f0f2f5;
+    color: #65676b;
+}
+
+.cart-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f2f5;
+    vertical-align: middle;
+}
+
+.cart-total-section {
+    margin-top: 30px;
+    text-align: right;
+    padding-top: 20px;
+    border-top: 2px solid #f0f2f5;
+}
+
+.cart-total-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1c1e21;
+    margin-bottom: 20px;
+}
+
+.cart-badge {
+    background: #dc3545;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    position: relative;
+    top: -10px;
+    left: -5px;
+}
+
+.btn-checkout {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-checkout:hover {
+    background: #218838;
+}
+/* --- Стили корзины ООО Кверт --- */
+.cart-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.cart-table th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #f0f2f5;
+    color: #65676b;
+    font-size: 14px;
+}
+
+.cart-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.cart-item-info b {
+    display: block;
+    font-size: 16px;
+    color: #1c1e21;
+}
+
+.cart-item-info small {
+    color: #888;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 2px solid #f0f2f5;
+}
+
+.total-label { font-size: 18px; color: #65676b; }
+.total-sum { font-size: 28px; font-weight: bold; color: #ff6600; }
+
+.btn-checkout-main {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-checkout-main:hover { background: #218838; transform: scale(1.02); }
+
+.btn-clear-cart {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 14px;
+}
+/* --- Стили оформления заказа ООО Кверт --- */
+.checkout-wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.checkout-summary {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 4px solid #28a745;
+}
+
+.checkout-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.checkout-form input, .checkout-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.order-success {
+    text-align: center;
+    padding: 50px;
+}
+
+.order-success h1 { color: #28a745; }
+/* --- Стили окна успешного заказа ООО Кверт --- */
+.success-card {
+    text-align: center;
+    padding: 60px 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    background: #e7f9ed;
+    color: #28a745;
+    font-size: 50px;
+    line-height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.success-card h1 {
+    color: #1c1e21;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.success-card p {
+    color: #65676b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.order-number {
+    display: inline-block;
+    background: #f0f2f5;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #ff6600;
+    margin-bottom: 25px;
+}
+
+.btn-back-home {
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-back-home:hover {
+    background: #166fe5;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+}
+/* --- Стили оформления и успеха ООО Кверт --- */
+.checkout-wrapper, .success-card {
+    max-width: 550px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.success-card { text-align: center; }
+
+.success-icon {
+    width: 80px; height: 80px; background: #e7f9ed; color: #28a745;
+    font-size: 40px; border-radius: 50%; margin: 0 auto 20px;
+    display: flex; justify-content: center; align-items: center;
+    animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes scaleIn { from { transform: scale(0); } to { transform: scale(1); } }
+
+.checkout-form select {
+    width: 100%; padding: 12px; margin-bottom: 25px;
+    border: 1px solid #dddfe2; border-radius: 6px; background: white;
+}
+/* --- Стили редактирования ООО Кверт --- */
+.edit-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.btn-save {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-save:hover { background: #0056b3; }
+
+.btn-cancel {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+/* --- Стили поиска ООО Кверт --- */
+.search-form {
+    display: flex;
+    background: #f0f2f5;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin: 0 20px;
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+}
+/* Базовая сетка каталога */
+.main-layout {
+    display: flex;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+/* Сетка карточек */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    flex-grow: 1;
+}
+
+/* ФИКСИРОВАННАЯ КАРТОЧКА */
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column; /* Элементы в колонку */
+    height: 100%; /* Растягиваем на всю высоту ряда */
+    box-sizing: border-box;
+}
+
+/* Картинка - всегда 160px */
+.product-img-box {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+.product-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+/* Название - строго 2 строки (44px) */
+.product-card h3 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    height: 44px; 
+    overflow: hidden;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    flex-shrink: 0;
+}
+
+/* Характеристики - РАСПОРКА (flex-grow: 1) */
+.product-features {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Занимает всё пустое место, толкая цену вниз */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 60px;
+}
+
+.feature-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #eee;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+}
+
+/* Цена и Кнопка - всегда внизу */
+.product-price { font-size: 22px; font-weight: bold; margin-bottom: 15px; color: #1c1e21; flex-shrink: 0; }
+.btn-buy { background: #1877f2; color: #fff; border: none; width: 100%; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; flex-shrink: 0; }
